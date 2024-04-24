@@ -1,0 +1,1720 @@
+{
+	"info": {
+		"_postman_id": "8b2c7de1-f48a-47da-be6b-af42c70e1b47",
+		"name": "TeamActivity",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33408992"
+	},
+	"item": [
+		{
+			"name": "Cahier Test",
+			"item": [
+				{
+					"name": "paged-list",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkIjoxNzEzMzkzOTMwNzk0LCJuYW1lIjoiUmFobWEgUmFobWEiLCJpZCI6MSwidXNlcm5hbWUiOiJyYWhtIiwiZXhwIjoxNzE0MTA1NTA0fQ.bLnSRXhiz6BDUT7la4qMFYECbjo3NcNDNU5Z8YE8xwg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4041/api/cahier_test/paged-list?page=0&size=20",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4041",
+							"path": [
+								"api",
+								"cahier_test",
+								"paged-list"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Cahier Test",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkIjoxNzEzMzkzOTMwNzk0LCJuYW1lIjoiUmFobWEgUmFobWEiLCJpZCI6MSwidXNlcm5hbWUiOiJyYWhtIiwiZXhwIjoxNzE0MTA1NTA0fQ.bLnSRXhiz6BDUT7la4qMFYECbjo3NcNDNU5Z8YE8xwg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n                \"nom\": \"test\",\r\n                \"description\": \"Hello World\",\r\n                \"project_id\": 22\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4041/api/cahier_test/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4041",
+							"path": [
+								"api",
+								"cahier_test",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Cahier Test",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkIjoxNzEzMzkzOTMwNzk0LCJuYW1lIjoiUmFobWEgUmFobWEiLCJpZCI6MSwidXNlcm5hbWUiOiJyYWhtIiwiZXhwIjoxNzE0MTA1NTA0fQ.bLnSRXhiz6BDUT7la4qMFYECbjo3NcNDNU5Z8YE8xwg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n                \"nom\": \"Man City\",\r\n                \"description\": \"Man City\",\r\n                \"project_id\":  23\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4041/api/cahier_test/update/67",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4041",
+							"path": [
+								"api",
+								"cahier_test",
+								"update",
+								"67"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Cahier Test By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkIjoxNzEzNDQ3ODk1NzI0LCJuYW1lIjoiUmFobWEgUmFobWEiLCJpZCI6MSwidXNlcm5hbWUiOiJyYWhtIiwiZXhwIjoxNzE0MTU5NDY5fQ.GE6j0FwsC79fYP3x8L0sQeaoandQcJQjOYBhJMYgyNQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4041/api/cahier_test/67",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4041",
+							"path": [
+								"api",
+								"cahier_test",
+								"67"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cas Test",
+			"item": [
+				{
+					"name": "paged-list",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkIjoxNzEzMzkzOTMwNzk0LCJuYW1lIjoiUmFobWEgUmFobWEiLCJpZCI6MSwidXNlcm5hbWUiOiJyYWhtIiwiZXhwIjoxNzE0MTA1NTA0fQ.bLnSRXhiz6BDUT7la4qMFYECbjo3NcNDNU5Z8YE8xwg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4041/api/cahier_test/paged-list?page=0&size=20",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4041",
+							"path": [
+								"api",
+								"cahier_test",
+								"paged-list"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Cahier Test",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkIjoxNzEzMzkzOTMwNzk0LCJuYW1lIjoiUmFobWEgUmFobWEiLCJpZCI6MSwidXNlcm5hbWUiOiJyYWhtIiwiZXhwIjoxNzE0MTA1NTA0fQ.bLnSRXhiz6BDUT7la4qMFYECbjo3NcNDNU5Z8YE8xwg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n                \"nom\": \"test\",\r\n                \"description\": \"Hello World\",\r\n                \"project_id\": 22\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4041/api/cahier_test/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4041",
+							"path": [
+								"api",
+								"cahier_test",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Cahier Test",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkIjoxNzEzMzkzOTMwNzk0LCJuYW1lIjoiUmFobWEgUmFobWEiLCJpZCI6MSwidXNlcm5hbWUiOiJyYWhtIiwiZXhwIjoxNzE0MTA1NTA0fQ.bLnSRXhiz6BDUT7la4qMFYECbjo3NcNDNU5Z8YE8xwg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n                \"nom\": \"Man City\",\r\n                \"description\": \"Man City\",\r\n                \"project_id\":  23\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4041/api/cahier_test/update/67",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4041",
+							"path": [
+								"api",
+								"cahier_test",
+								"update",
+								"67"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Cahier Test By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkIjoxNzEzNDQ3ODk1NzI0LCJuYW1lIjoiUmFobWEgUmFobWEiLCJpZCI6MSwidXNlcm5hbWUiOiJyYWhtIiwiZXhwIjoxNzE0MTU5NDY5fQ.GE6j0FwsC79fYP3x8L0sQeaoandQcJQjOYBhJMYgyNQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4041/api/cahier_test/67",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4041",
+							"path": [
+								"api",
+								"cahier_test",
+								"67"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Configuration",
+			"item": [
+				{
+					"name": "Create Configuration",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkIjoxNzEzNDQ3ODk1NzI0LCJuYW1lIjoiUmFobWEgUmFobWEiLCJpZCI6MSwidXNlcm5hbWUiOiJyYWhtIiwiZXhwIjoxNzE0MTU5NDY5fQ.GE6j0FwsC79fYP3x8L0sQeaoandQcJQjOYBhJMYgyNQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Nom de la configuration\",\r\n    \"content\": \"Contenu de la configuration\",\r\n    \"configurationReferenceId\": 26,\r\n    \"projectId\": 26\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4041/api/configuration/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4041",
+							"path": [
+								"api",
+								"configuration",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Configuration",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkIjoxNzEzMzkzOTMwNzk0LCJuYW1lIjoiUmFobWEgUmFobWEiLCJpZCI6MSwidXNlcm5hbWUiOiJyYWhtIiwiZXhwIjoxNzE0MTA1NTA0fQ.bLnSRXhiz6BDUT7la4qMFYECbjo3NcNDNU5Z8YE8xwg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Nom de la configuration\",\r\n    \"content\": \"Contenu de la configuration\",\r\n    \"configurationReferenceId\": 26,\r\n    \"projectId\": 26\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4041/api/configuration/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4041",
+							"path": [
+								"api",
+								"configuration",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Configuration",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkIjoxNzEzNDQ3ODk1NzI0LCJuYW1lIjoiUmFobWEgUmFobWEiLCJpZCI6MSwidXNlcm5hbWUiOiJyYWhtIiwiZXhwIjoxNzE0MTU5NDY5fQ.GE6j0FwsC79fYP3x8L0sQeaoandQcJQjOYBhJMYgyNQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Config Test\",\r\n    \"content\": \"configuration Content\",\r\n    \"projectId\":21,\r\n    \"configurationReferenceId\":31\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4041/api/configuration/paged-list?page=0&size=20",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4041",
+							"path": [
+								"api",
+								"configuration",
+								"paged-list"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Configuration By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkIjoxNzEzNDQ3ODk1NzI0LCJuYW1lIjoiUmFobWEgUmFobWEiLCJpZCI6MSwidXNlcm5hbWUiOiJyYWhtIiwiZXhwIjoxNzE0MTU5NDY5fQ.GE6j0FwsC79fYP3x8L0sQeaoandQcJQjOYBhJMYgyNQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4041/api/configuration/15",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4041",
+							"path": [
+								"api",
+								"configuration",
+								"15"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Configuration By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkIjoxNzEzNDQ3ODk1NzI0LCJuYW1lIjoiUmFobWEgUmFobWEiLCJpZCI6MSwidXNlcm5hbWUiOiJyYWhtIiwiZXhwIjoxNzE0MTU5NDY5fQ.GE6j0FwsC79fYP3x8L0sQeaoandQcJQjOYBhJMYgyNQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4041/api/configuration/delete/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4041",
+							"path": [
+								"api",
+								"configuration",
+								"delete",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkIjoxNzEzMzkzOTMwNzk0LCJuYW1lIjoiUmFobWEgUmFobWEiLCJpZCI6MSwidXNlcm5hbWUiOiJyYWhtIiwiZXhwIjoxNzE0MTA1NTA0fQ.bLnSRXhiz6BDUT7la4qMFYECbjo3NcNDNU5Z8YE8xwg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"rahm\",\r\n    \"password\":\"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4041/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4041",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "rahm",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4041/api/auth/signout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4041",
+							"path": [
+								"api",
+								"auth",
+								"signout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Project",
+			"item": [
+				{
+					"name": "Create Project",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkIjoxNzEzMzkzOTMwNzk0LCJuYW1lIjoiUmFobWEgUmFobWEiLCJpZCI6MSwidXNlcm5hbWUiOiJyYWhtIiwiZXhwIjoxNzE0MTA1NTA0fQ.bLnSRXhiz6BDUT7la4qMFYECbjo3NcNDNU5Z8YE8xwg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"name\": \"projet1\",\r\n    \"description\": \"projet numero1\",\r\n    \"status\": \"InProgress\",\r\n    \"startDate\": \"2025-04-18\",\r\n    \"endDate\": \"2026-06-30\",\r\n    \"deadlines\": 6,\r\n    \"userIds\": [1, 2, 3],\r\n    \"teams\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4041/api/project/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4041",
+							"path": [
+								"api",
+								"project",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Project Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkIjoxNzEzMzkzOTMwNzk0LCJuYW1lIjoiUmFobWEgUmFobWEiLCJpZCI6MSwidXNlcm5hbWUiOiJyYWhtIiwiZXhwIjoxNzE0MTA1NTA0fQ.bLnSRXhiz6BDUT7la4qMFYECbjo3NcNDNU5Z8YE8xwg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"name\": \"Mon projet\",\r\n    \"description\": \"Description de mon projet\",\r\n    \"status\": \"InProgress\",\r\n    \"startDate\": \"2024-04-18\",\r\n    \"endDate\": \"2024-06-30\",\r\n    \"deadlines\": 9,\r\n    \"userIds\": [1, 2, 3],\r\n    \"teams\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4041/api/project/update/19",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4041",
+							"path": [
+								"api",
+								"project",
+								"update",
+								"19"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Project",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkIjoxNzEzMzkzOTMwNzk0LCJuYW1lIjoiUmFobWEgUmFobWEiLCJpZCI6MSwidXNlcm5hbWUiOiJyYWhtIiwiZXhwIjoxNzE0MTA1NTA0fQ.bLnSRXhiz6BDUT7la4qMFYECbjo3NcNDNU5Z8YE8xwg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"name\": \"Mon projet\",\r\n    \"description\": \"Description de mon projet\",\r\n    \"status\": \"InProgress\",\r\n    \"startDate\": \"2024-04-18\",\r\n    \"endDate\": \"2024-06-30\",\r\n    \"deadlines\": 3,\r\n    \"userIds\": [1, 2, 3],\r\n    \"teams\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4041/api/project/paged-list?page=0&size=20",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4041",
+							"path": [
+								"api",
+								"project",
+								"paged-list"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Project By ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkIjoxNzEzMzkzOTMwNzk0LCJuYW1lIjoiUmFobWEgUmFobWEiLCJpZCI6MSwidXNlcm5hbWUiOiJyYWhtIiwiZXhwIjoxNzE0MTA1NTA0fQ.bLnSRXhiz6BDUT7la4qMFYECbjo3NcNDNU5Z8YE8xwg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"name\": \"Mon projet\",\r\n    \"description\": \"Description de mon projet\",\r\n    \"status\": \"InProgress\",\r\n    \"startDate\": \"2024-04-18\",\r\n    \"endDate\": \"2024-06-30\",\r\n    \"deadlines\": 3,\r\n    \"userIds\": [1, 2, 3],\r\n    \"teams\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4041/api/project/18",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4041",
+							"path": [
+								"api",
+								"project",
+								"18"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Project By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkIjoxNzEzMzkzOTMwNzk0LCJuYW1lIjoiUmFobWEgUmFobWEiLCJpZCI6MSwidXNlcm5hbWUiOiJyYWhtIiwiZXhwIjoxNzE0MTA1NTA0fQ.bLnSRXhiz6BDUT7la4qMFYECbjo3NcNDNU5Z8YE8xwg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"name\": \"Mon projet\",\r\n    \"description\": \"Description de mon projet\",\r\n    \"status\": \"InProgress\",\r\n    \"startDate\": \"2024-04-18\",\r\n    \"endDate\": \"2024-06-30\",\r\n    \"deadlines\": 3,\r\n    \"userIds\": [1, 2, 3],\r\n    \"teams\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4041/api/project/delete/19",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4041",
+							"path": [
+								"api",
+								"project",
+								"delete",
+								"19"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CahierTestRef",
+			"item": [
+				{
+					"name": "Create cahierTestRef",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkIjoxNzEzMzkzOTMwNzk0LCJuYW1lIjoiUmFobWEgUmFobWEiLCJpZCI6MSwidXNlcm5hbWUiOiJyYWhtIiwiZXhwIjoxNzE0MTA1NTA0fQ.bLnSRXhiz6BDUT7la4qMFYECbjo3NcNDNU5Z8YE8xwg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Nom du cahier de test\",\r\n    \"content\": \"Contenu du cahier de test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4041/api/cahierTestRef/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4041",
+							"path": [
+								"api",
+								"cahierTestRef",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit cahierTestRef",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkIjoxNzEzMzkzOTMwNzk0LCJuYW1lIjoiUmFobWEgUmFobWEiLCJpZCI6MSwidXNlcm5hbWUiOiJyYWhtIiwiZXhwIjoxNzE0MTA1NTA0fQ.bLnSRXhiz6BDUT7la4qMFYECbjo3NcNDNU5Z8YE8xwg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"name\": \"Mon projet\",\r\n    \"description\": \"Description de mon projet\",\r\n    \"status\": \"InProgress\",\r\n    \"startDate\": \"2024-04-18\",\r\n    \"endDate\": \"2024-06-30\",\r\n    \"deadlines\": 9,\r\n    \"userIds\": [1, 2, 3],\r\n    \"teams\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4041/api/cahierTestRef/update/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4041",
+							"path": [
+								"api",
+								"cahierTestRef",
+								"update",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All cahierTestRef",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkIjoxNzEzMzkzOTMwNzk0LCJuYW1lIjoiUmFobWEgUmFobWEiLCJpZCI6MSwidXNlcm5hbWUiOiJyYWhtIiwiZXhwIjoxNzE0MTA1NTA0fQ.bLnSRXhiz6BDUT7la4qMFYECbjo3NcNDNU5Z8YE8xwg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"name\": \"Mon projet\",\r\n    \"description\": \"Description de mon projet\",\r\n    \"status\": \"InProgress\",\r\n    \"startDate\": \"2024-04-18\",\r\n    \"endDate\": \"2024-06-30\",\r\n    \"deadlines\": 3,\r\n    \"userIds\": [1, 2, 3],\r\n    \"teams\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4041/api/cahierTestRef/paged-list?page=0&size=20",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4041",
+							"path": [
+								"api",
+								"cahierTestRef",
+								"paged-list"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get cahierTestRef By ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkIjoxNzEzMzkzOTMwNzk0LCJuYW1lIjoiUmFobWEgUmFobWEiLCJpZCI6MSwidXNlcm5hbWUiOiJyYWhtIiwiZXhwIjoxNzE0MTA1NTA0fQ.bLnSRXhiz6BDUT7la4qMFYECbjo3NcNDNU5Z8YE8xwg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"name\": \"Mon projet\",\r\n    \"description\": \"Description de mon projet\",\r\n    \"status\": \"InProgress\",\r\n    \"startDate\": \"2024-04-18\",\r\n    \"endDate\": \"2024-06-30\",\r\n    \"deadlines\": 3,\r\n    \"userIds\": [1, 2, 3],\r\n    \"teams\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4041/api/cahierTestRef/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4041",
+							"path": [
+								"api",
+								"cahierTestRef",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete cahierTestRef By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkIjoxNzEzMzkzOTMwNzk0LCJuYW1lIjoiUmFobWEgUmFobWEiLCJpZCI6MSwidXNlcm5hbWUiOiJyYWhtIiwiZXhwIjoxNzE0MTA1NTA0fQ.bLnSRXhiz6BDUT7la4qMFYECbjo3NcNDNU5Z8YE8xwg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"name\": \"Mon projet\",\r\n    \"description\": \"Description de mon projet\",\r\n    \"status\": \"InProgress\",\r\n    \"startDate\": \"2024-04-18\",\r\n    \"endDate\": \"2024-06-30\",\r\n    \"deadlines\": 3,\r\n    \"userIds\": [1, 2, 3],\r\n    \"teams\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4041/api/cahierTestRef/delete/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4041",
+							"path": [
+								"api",
+								"cahierTestRef",
+								"delete",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Installation",
+			"item": [
+				{
+					"name": "Create Installation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkIjoxNzEzMzkzOTMwNzk0LCJuYW1lIjoiUmFobWEgUmFobWEiLCJpZCI6MSwidXNlcm5hbWUiOiJyYWhtIiwiZXhwIjoxNzE0MTA1NTA0fQ.bLnSRXhiz6BDUT7la4qMFYECbjo3NcNDNU5Z8YE8xwg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nom\": \"Nom de l'installation\",\r\n    \"dateReception\": \"2024-04-18\",\r\n    \"dateInstallation\": \"2024-04-20\",\r\n    \"status\": \"ANNULE\",\r\n    \"project_id\": 22\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4041/api/installation/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4041",
+							"path": [
+								"api",
+								"installation",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Installation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkIjoxNzEzMzkzOTMwNzk0LCJuYW1lIjoiUmFobWEgUmFobWEiLCJpZCI6MSwidXNlcm5hbWUiOiJyYWhtIiwiZXhwIjoxNzE0MTA1NTA0fQ.bLnSRXhiz6BDUT7la4qMFYECbjo3NcNDNU5Z8YE8xwg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nom\": \"Nom de l'installation\",\r\n    \"dateReception\": \"2024-04-18\",\r\n    \"dateInstallation\": \"2024-04-20\",\r\n    \"status\": \"NON_INSTALLE\",\r\n    \"project_id\": 22\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4041/api/installation/update/16",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4041",
+							"path": [
+								"api",
+								"installation",
+								"update",
+								"16"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Installation",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkIjoxNzEzMzkzOTMwNzk0LCJuYW1lIjoiUmFobWEgUmFobWEiLCJpZCI6MSwidXNlcm5hbWUiOiJyYWhtIiwiZXhwIjoxNzE0MTA1NTA0fQ.bLnSRXhiz6BDUT7la4qMFYECbjo3NcNDNU5Z8YE8xwg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"name\": \"Mon projet\",\r\n    \"description\": \"Description de mon projet\",\r\n    \"status\": \"InProgress\",\r\n    \"startDate\": \"2024-04-18\",\r\n    \"endDate\": \"2024-06-30\",\r\n    \"deadlines\": 3,\r\n    \"userIds\": [1, 2, 3],\r\n    \"teams\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4041/api/installation/paged-list?page=0&size=20",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4041",
+							"path": [
+								"api",
+								"installation",
+								"paged-list"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Installation By ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkIjoxNzEzMzkzOTMwNzk0LCJuYW1lIjoiUmFobWEgUmFobWEiLCJpZCI6MSwidXNlcm5hbWUiOiJyYWhtIiwiZXhwIjoxNzE0MTA1NTA0fQ.bLnSRXhiz6BDUT7la4qMFYECbjo3NcNDNU5Z8YE8xwg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"name\": \"Mon projet\",\r\n    \"description\": \"Description de mon projet\",\r\n    \"status\": \"InProgress\",\r\n    \"startDate\": \"2024-04-18\",\r\n    \"endDate\": \"2024-06-30\",\r\n    \"deadlines\": 3,\r\n    \"userIds\": [1, 2, 3],\r\n    \"teams\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4041/api/installation/18",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4041",
+							"path": [
+								"api",
+								"installation",
+								"18"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Installation By ID Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkIjoxNzEzMzkzOTMwNzk0LCJuYW1lIjoiUmFobWEgUmFobWEiLCJpZCI6MSwidXNlcm5hbWUiOiJyYWhtIiwiZXhwIjoxNzE0MTA1NTA0fQ.bLnSRXhiz6BDUT7la4qMFYECbjo3NcNDNU5Z8YE8xwg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"name\": \"Mon projet\",\r\n    \"description\": \"Description de mon projet\",\r\n    \"status\": \"InProgress\",\r\n    \"startDate\": \"2024-04-18\",\r\n    \"endDate\": \"2024-06-30\",\r\n    \"deadlines\": 3,\r\n    \"userIds\": [1, 2, 3],\r\n    \"teams\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4041/api/installation/delete/14",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4041",
+							"path": [
+								"api",
+								"installation",
+								"delete",
+								"14"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "IssueLog",
+			"item": [
+				{
+					"name": "Create IssueLog",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkIjoxNzEzMzkzOTMwNzk0LCJuYW1lIjoiUmFobWEgUmFobWEiLCJpZCI6MSwidXNlcm5hbWUiOiJyYWhtIiwiZXhwIjoxNzE0MTA1NTA0fQ.bLnSRXhiz6BDUT7la4qMFYECbjo3NcNDNU5Z8YE8xwg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dateDetection\": \"2024-04-18\",\r\n    \"anomaly\": true,\r\n    \"description\": \"Description de l'anomalie\",\r\n    \"status\": \"RESOLU\",\r\n    \"project_id\": 22\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4041/api/issueLog/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4041",
+							"path": [
+								"api",
+								"issueLog",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit IssueLog",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkIjoxNzEzMzkzOTMwNzk0LCJuYW1lIjoiUmFobWEgUmFobWEiLCJpZCI6MSwidXNlcm5hbWUiOiJyYWhtIiwiZXhwIjoxNzE0MTA1NTA0fQ.bLnSRXhiz6BDUT7la4qMFYECbjo3NcNDNU5Z8YE8xwg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dateDetection\": \"2024-04-18\",\r\n    \"anomaly\": true,\r\n    \"description\": \"Description de l'anomalie\",\r\n    \"status\": \"RESOLU\",\r\n    \"project_id\": 22\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4041/api/issueLog/update/19",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4041",
+							"path": [
+								"api",
+								"issueLog",
+								"update",
+								"19"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All IssueLog",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkIjoxNzEzMzkzOTMwNzk0LCJuYW1lIjoiUmFobWEgUmFobWEiLCJpZCI6MSwidXNlcm5hbWUiOiJyYWhtIiwiZXhwIjoxNzE0MTA1NTA0fQ.bLnSRXhiz6BDUT7la4qMFYECbjo3NcNDNU5Z8YE8xwg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"name\": \"Mon projet\",\r\n    \"description\": \"Description de mon projet\",\r\n    \"status\": \"InProgress\",\r\n    \"startDate\": \"2024-04-18\",\r\n    \"endDate\": \"2024-06-30\",\r\n    \"deadlines\": 3,\r\n    \"userIds\": [1, 2, 3],\r\n    \"teams\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4041/api/issueLog/paged-list?page=0&size=20",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4041",
+							"path": [
+								"api",
+								"issueLog",
+								"paged-list"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get IssueLog By ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkIjoxNzEzMzkzOTMwNzk0LCJuYW1lIjoiUmFobWEgUmFobWEiLCJpZCI6MSwidXNlcm5hbWUiOiJyYWhtIiwiZXhwIjoxNzE0MTA1NTA0fQ.bLnSRXhiz6BDUT7la4qMFYECbjo3NcNDNU5Z8YE8xwg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"name\": \"Mon projet\",\r\n    \"description\": \"Description de mon projet\",\r\n    \"status\": \"InProgress\",\r\n    \"startDate\": \"2024-04-18\",\r\n    \"endDate\": \"2024-06-30\",\r\n    \"deadlines\": 3,\r\n    \"userIds\": [1, 2, 3],\r\n    \"teams\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4041/api/issueLog/17",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4041",
+							"path": [
+								"api",
+								"issueLog",
+								"17"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete IssueLog By ID Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkIjoxNzEzMzkzOTMwNzk0LCJuYW1lIjoiUmFobWEgUmFobWEiLCJpZCI6MSwidXNlcm5hbWUiOiJyYWhtIiwiZXhwIjoxNzE0MTA1NTA0fQ.bLnSRXhiz6BDUT7la4qMFYECbjo3NcNDNU5Z8YE8xwg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"name\": \"Mon projet\",\r\n    \"description\": \"Description de mon projet\",\r\n    \"status\": \"InProgress\",\r\n    \"startDate\": \"2024-04-18\",\r\n    \"endDate\": \"2024-06-30\",\r\n    \"deadlines\": 3,\r\n    \"userIds\": [1, 2, 3],\r\n    \"teams\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4041/api/issueLog/delete/18",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4041",
+							"path": [
+								"api",
+								"issueLog",
+								"delete",
+								"18"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "RefConfiguration",
+			"item": [
+				{
+					"name": "Create RefConfiguration",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkIjoxNzEzMzkzOTMwNzk0LCJuYW1lIjoiUmFobWEgUmFobWEiLCJpZCI6MSwidXNlcm5hbWUiOiJyYWhtIiwiZXhwIjoxNzE0MTA1NTA0fQ.bLnSRXhiz6BDUT7la4qMFYECbjo3NcNDNU5Z8YE8xwg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Nom de la configuration\",\r\n    \"content\": \"Contenu de la configuration\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4041/api/configurationReference/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4041",
+							"path": [
+								"api",
+								"configurationReference",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Project Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkIjoxNzEzMzkzOTMwNzk0LCJuYW1lIjoiUmFobWEgUmFobWEiLCJpZCI6MSwidXNlcm5hbWUiOiJyYWhtIiwiZXhwIjoxNzE0MTA1NTA0fQ.bLnSRXhiz6BDUT7la4qMFYECbjo3NcNDNU5Z8YE8xwg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Nom Edité de la configuration\",\r\n    \"content\": \"Contenu de la configuration\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4041/api/configurationReference/update/34",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4041",
+							"path": [
+								"api",
+								"configurationReference",
+								"update",
+								"34"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All RefConfiguration",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkIjoxNzEzMzkzOTMwNzk0LCJuYW1lIjoiUmFobWEgUmFobWEiLCJpZCI6MSwidXNlcm5hbWUiOiJyYWhtIiwiZXhwIjoxNzE0MTA1NTA0fQ.bLnSRXhiz6BDUT7la4qMFYECbjo3NcNDNU5Z8YE8xwg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"name\": \"Mon projet\",\r\n    \"description\": \"Description de mon projet\",\r\n    \"status\": \"InProgress\",\r\n    \"startDate\": \"2024-04-18\",\r\n    \"endDate\": \"2024-06-30\",\r\n    \"deadlines\": 3,\r\n    \"userIds\": [1, 2, 3],\r\n    \"teams\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4041/api/configurationReference/paged-list?page=0&size=20",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4041",
+							"path": [
+								"api",
+								"configurationReference",
+								"paged-list"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get RefConfiguration By ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkIjoxNzEzMzkzOTMwNzk0LCJuYW1lIjoiUmFobWEgUmFobWEiLCJpZCI6MSwidXNlcm5hbWUiOiJyYWhtIiwiZXhwIjoxNzE0MTA1NTA0fQ.bLnSRXhiz6BDUT7la4qMFYECbjo3NcNDNU5Z8YE8xwg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"name\": \"Mon projet\",\r\n    \"description\": \"Description de mon projet\",\r\n    \"status\": \"InProgress\",\r\n    \"startDate\": \"2024-04-18\",\r\n    \"endDate\": \"2024-06-30\",\r\n    \"deadlines\": 3,\r\n    \"userIds\": [1, 2, 3],\r\n    \"teams\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4041/api/configurationReference/34",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4041",
+							"path": [
+								"api",
+								"configurationReference",
+								"34"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete RefConfiguration By ID Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVkIjoxNzEzMzkzOTMwNzk0LCJuYW1lIjoiUmFobWEgUmFobWEiLCJpZCI6MSwidXNlcm5hbWUiOiJyYWhtIiwiZXhwIjoxNzE0MTA1NTA0fQ.bLnSRXhiz6BDUT7la4qMFYECbjo3NcNDNU5Z8YE8xwg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"name\": \"Mon projet\",\r\n    \"description\": \"Description de mon projet\",\r\n    \"status\": \"InProgress\",\r\n    \"startDate\": \"2024-04-18\",\r\n    \"endDate\": \"2024-06-30\",\r\n    \"deadlines\": 3,\r\n    \"userIds\": [1, 2, 3],\r\n    \"teams\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4041/api/configurationReference/delete/29",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4041",
+							"path": [
+								"api",
+								"configurationReference",
+								"delete",
+								"29"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
