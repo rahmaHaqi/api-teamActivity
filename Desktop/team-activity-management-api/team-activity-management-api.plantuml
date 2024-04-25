@@ -1,0 +1,701 @@
+@startuml
+
+!theme plain
+top to bottom direction
+skinparam linetype ortho
+
+class AuditorAwareImpl {
+  + AuditorAwareImpl(): 
+   currentAuditor: Optional<String>
+}
+class AuthController {
+  + AuthController(AuthService): 
+  + authenticateUser(LoginRequest): ResponseEntity<ResponseBody<JwtResponse>>
+}
+class AuthEntryPointJwt {
+  + AuthEntryPointJwt(): 
+  + commence(HttpServletRequest, HttpServletResponse, AuthenticationException): void
+}
+interface AuthService << interface >> {
+  + loginUser(LoginRequest): JwtResponse
+}
+class AuthServiceImpl {
+  + AuthServiceImpl(AuthenticationManager, JwtUtils, UserService, IMapClassWithDto): 
+  + loginUser(LoginRequest): JwtResponse
+}
+class AuthTokenFilter {
+  + AuthTokenFilter(): 
+  - getStringValue(byte[], String): String
+  - parseJwt(HttpServletRequest): String
+  # doFilterInternal(HttpServletRequest, HttpServletResponse, FilterChain): void
+}
+class BasicConverter<ENTITY, DTO> {
+  + BasicConverter(): 
+  + convertFrom(Collection<DTO>): List<ENTITY>
+}
+interface BusinessErrorCode << interface >> {
+   message: String
+}
+class BusinessException {
+  + BusinessException(BusinessErrorCode): 
+  + BusinessException(String): 
+  + BusinessException(String, BusinessErrorCode): 
+  - message: String
+  - status: HttpStatus
+  - errorCode: BusinessErrorCode
+   message: String
+   errorCode: BusinessErrorCode
+   status: HttpStatus
+}
+class BusinessExceptionMapper<T> {
+  + BusinessExceptionMapper(): 
+  + handleBusinessException(BusinessException): ResponseEntity<ResponseBody<String>>
+}
+class CahierTestController {
+  + CahierTestController(CahierTestService): 
+  + getPagedListInstallation(Integer, Integer): ResponseEntity<ResponseBody<Page<CahierTestDto>>>
+  + deleteCahierTest(Long): ResponseEntity<ResponseBody<CahierTestDto>>
+  + updateCahierTest(Long, CahierTestDto): ResponseEntity<ResponseBody<CahierTestDto>>
+  + getInstallationById(Long): ResponseEntity<ResponseBody<CahierTestDto>>
+  + createCahierTest(CahierTestDto): ResponseEntity<ResponseBody<CahierTestDto>>
+}
+class CahierTestDto {
+  + CahierTestDto(): 
+  + CahierTestDto(String, String, Long, String): 
+  - project_id: Long
+  - nom: String
+  - description: String
+  - projectName: String
+  + builder(): CahierTestDtoBuilder
+   description: String
+   nom: String
+   project_id: Long
+   projectName: String
+}
+class CahierTestEntity {
+  + CahierTestEntity(Long, String, String, ProjectEntity): 
+  + CahierTestEntity(): 
+  - id: Long
+  - project: ProjectEntity
+  - nom: String
+  - description: String
+  + builder(): CahierTestEntityBuilder
+   description: String
+   nom: String
+   project: ProjectEntity
+   id: Long
+}
+interface CahierTestRepository << interface >>
+interface CahierTestService << interface >> {
+  + getPagedListCahierTest(Integer, Integer): Page<CahierTestDto>
+  + getCahierTestById(Long): CahierTestDto
+  + saveCahierTest(CahierTestDto): CahierTestDto
+  + updateCahierTestDto(Long, CahierTestDto): CahierTestDto
+  + deleteCahierTest(Long): void
+}
+class CahierTestServiceImpl {
+  + CahierTestServiceImpl(CahierTestRepository, ProjectRepository, IMapClassWithDto): 
+  + deleteCahierTest(Long): void
+  + saveCahierTest(CahierTestDto): CahierTestDto
+  + getPagedListCahierTest(Integer, Integer): Page<CahierTestDto>
+  + updateCahierTestDto(Long, CahierTestDto): CahierTestDto
+  + getCahierTestById(Long): CahierTestDto
+}
+enum ClaimKeyEnum << enumeration >> {
+  - ClaimKeyEnum(String): 
+  - value: String
+  + values(): ClaimKeyEnum[]
+  + valueOf(String): ClaimKeyEnum
+   value: String
+}
+enum CommonStatusCode << enumeration >> {
+  - CommonStatusCode(String): 
+  - message: String
+  + values(): CommonStatusCode[]
+  + valueOf(String): CommonStatusCode
+   message: String
+}
+class ConfigUtils {
+  + ConfigUtils(): 
+  + genericControllerAspect(): GenericControllerAspect
+  + modelMapper(): ModelMapper
+  + exceptionToErrorCodeMap(): Map<String, BusinessErrorCode>
+  + auditorAware(): AuditorAware<String>
+}
+class ConfigurationController {
+  + ConfigurationController(ConfigurationService): 
+  + getPagedListConfiguration(Integer, Integer): ResponseEntity<ResponseBody<Page<ConfigurationDto>>>
+  + createConfiguration(ConfigurationDto): ResponseEntity<ResponseBody<ConfigurationDto>>
+  + updateConfiguration(Long, ConfigurationDto): ResponseEntity<ResponseBody<ConfigurationDto>>
+  + deleteConfiguration(Long): ResponseEntity<ResponseBody<ProjectDto>>
+  + getConfigurationById(Long): ResponseEntity<ResponseBody<ConfigurationDto>>
+}
+class ConfigurationDto {
+  + ConfigurationDto(): 
+  + ConfigurationDto(String, String, Long, Long): 
+  - configurationReferenceId: Long
+  - projectId: Long
+  - name: String
+  - content: String
+  + builder(): ConfigurationDtoBuilder
+   name: String
+   projectId: Long
+   content: String
+   configurationReferenceId: Long
+}
+class ConfigurationEntity {
+  + ConfigurationEntity(): 
+  + ConfigurationEntity(Long, String, String, ConfigurationReferenceEntity, ProjectEntity): 
+  - project: ProjectEntity
+  - name: String
+  - configurationReference: ConfigurationReferenceEntity
+  - id: Long
+  - content: String
+  + builder(): ConfigurationEntityBuilder
+   name: String
+   project: ProjectEntity
+   content: String
+   id: Long?
+   configurationReference: ConfigurationReferenceEntity
+}
+class ConfigurationReferenceController {
+  + ConfigurationReferenceController(ConfigurationReferenceService): 
+  + createConfigurationReference(ConfigurationReferenceDTO): ResponseEntity<ResponseBody<ConfigurationReferenceDTO>>
+  + getPagedListConfigurationReference(Integer, Integer): ResponseEntity<ResponseBody<Page<ConfigurationReferenceDTO>>>
+  + updateConfigurationReference(Long, ConfigurationReferenceDTO): ResponseEntity<ResponseBody<ConfigurationReferenceDTO>>
+  + deleteConfigurationReference(Long): ResponseEntity<ResponseBody<ProjectDto>>
+  + getConfigurationReferenceById(Long): ResponseEntity<ResponseBody<ConfigurationReferenceDTO>>
+}
+class ConfigurationReferenceDTO {
+  + ConfigurationReferenceDTO(): 
+  + ConfigurationReferenceDTO(String, String): 
+  - content: String
+  - name: String
+  + builder(): ConfigurationReferenceDTOBuilder
+   name: String
+   content: String
+}
+class ConfigurationReferenceEntity {
+  + ConfigurationReferenceEntity(Long, String, String): 
+  + ConfigurationReferenceEntity(): 
+  - id: Long
+  - content: String
+  - name: String
+  + builder(): ConfigurationReferenceEntityBuilder
+   name: String
+   id: Long?
+   content: String
+}
+interface ConfigurationReferenceRepository << interface >>
+interface ConfigurationReferenceService << interface >> {
+  + getConfigurationReferenceById(Long): ConfigurationReferenceDTO
+  + updateConfigurationReference(Long, ConfigurationReferenceDTO): ConfigurationReferenceDTO
+  + deleteConfigurationReferenceDTO(Long): void
+  + getPagedListConfigurationReferenceDTO(Integer, Integer): Page<ConfigurationReferenceDTO>
+  + saveConfigurationReference(ConfigurationReferenceDTO): ConfigurationReferenceDTO
+}
+class ConfigurationReferenceServiceImpl {
+  + ConfigurationReferenceServiceImpl(ConfigurationReferenceRepository, IMapClassWithDto): 
+  + getConfigurationReferenceById(Long): ConfigurationReferenceDTO
+  + deleteConfigurationReferenceDTO(Long): void
+  + saveConfigurationReference(ConfigurationReferenceDTO): ConfigurationReferenceDTO
+  + updateConfigurationReference(Long, ConfigurationReferenceDTO): ConfigurationReferenceDTO
+  + getPagedListConfigurationReferenceDTO(Integer, Integer): Page<ConfigurationReferenceDTO>
+}
+interface ConfigurationRepository << interface >>
+interface ConfigurationService << interface >> {
+  + getPagedListConfiguration(Integer, Integer): Page<ConfigurationDto>
+  + saveConfiguration(ConfigurationDto): ConfigurationDto
+  + updateConfiguration(Long, ConfigurationDto): ConfigurationDto
+  + deleteConfiguration(Long): void
+  + getConfigurationById(Long): ConfigurationDto
+}
+class ConfigurationServiceImpl {
+  + ConfigurationServiceImpl(ConfigurationRepository, ProjectRepository, IMapClassWithDto): 
+  + getConfigurationById(Long): ConfigurationDto
+  + updateConfiguration(Long, ConfigurationDto): ConfigurationDto
+  + deleteConfiguration(Long): void
+  + saveConfiguration(ConfigurationDto): ConfigurationDto
+  + getPagedListConfiguration(Integer, Integer): Page<ConfigurationDto>
+}
+interface Converter<E, D> << interface >> {
+  + convertFrom(D): E
+}
+class CorsConfig {
+  + CorsConfig(): 
+  + corsConfigurationSource(): CorsConfigurationSource
+}
+class CustomAuditEntity {
+  + CustomAuditEntity(): 
+  - createdBy: String
+  - lastModifiedDate: LocalDateTime
+  - lastModifiedBy: String
+  - createdDate: LocalDateTime
+   lastModifiedBy: Optional<String>
+   new: boolean
+   lastModifiedDate: Optional<LocalDateTime>
+   createdBy: Optional<String>
+   createdDate: Optional<LocalDateTime>
+}
+class CustomDateTimeProvider {
+  + CustomDateTimeProvider(): 
+   now: Optional<TemporalAccessor>
+}
+class CustomDtoWithID {
+  + CustomDtoWithID(): 
+  + CustomDtoWithID(Long, LocalDateTime, LocalDateTime, String, String): 
+  - createdBy: String
+  - id: Long
+  - lastModifiedDate: LocalDateTime
+  - createdDate: LocalDateTime
+  - lastModifiedBy: String
+   lastModifiedBy: Optional<String>
+   id: Long
+   lastModifiedDate: Optional<LocalDateTime>
+   createdBy: Optional<String>
+   createdDate: Optional<LocalDateTime>
+}
+enum ErrorCode << enumeration >> {
+  - ErrorCode(String): 
+  - message: String
+  + values(): ErrorCode[]
+  + valueOf(String): ErrorCode
+   message: String
+}
+interface IMapClassWithDto << interface >> {
+  + convert(I, Class<O>): O
+}
+class InstallationController {
+  + InstallationController(InstallationService): 
+  + createInstallation(InstallationDto): ResponseEntity<ResponseBody<InstallationDto>>
+  + getPagedListInstallation(Integer, Integer): ResponseEntity<ResponseBody<Page<InstallationDto>>>
+  + deleteInstallationDto(Long): ResponseEntity<ResponseBody<InstallationDto>>
+  + updateConfigurationReference(Long, InstallationDto): ResponseEntity<ResponseBody<InstallationDto>>
+  + getInstallationById(Long): ResponseEntity<ResponseBody<InstallationDto>>
+}
+class InstallationDto {
+  + InstallationDto(String, LocalDate, LocalDate, StatusInstallation, Long, String): 
+  + InstallationDto(): 
+  - projectName: String
+  - dateInstallation: LocalDate
+  - status: StatusInstallation
+  - nom: String
+  - project_id: Long
+  - dateReception: LocalDate
+  + builder(): InstallationDtoBuilder
+   nom: String
+   dateReception: LocalDate
+   status: StatusInstallation
+   project_id: Long
+   projectName: String
+   dateInstallation: LocalDate
+}
+class InstallationEntity {
+  + InstallationEntity(): 
+  + InstallationEntity(Long, String, LocalDate, LocalDate, StatusInstallation, ProjectEntity): 
+  - nom: String
+  - dateInstallation: LocalDate
+  - project: ProjectEntity
+  - status: StatusInstallation
+  - dateReception: LocalDate
+  - id: Long
+  + builder(): InstallationEntityBuilder
+   nom: String
+   dateReception: LocalDate
+   project: ProjectEntity
+   id: Long?
+   status: StatusInstallation
+   dateInstallation: LocalDate
+}
+interface InstallationRepository << interface >>
+interface InstallationService << interface >> {
+  + updateInstallation(Long, InstallationDto): InstallationDto
+  + deleteInstallation(Long): void
+  + getPagedListInstallationDTO(Integer, Integer): Page<InstallationDto>
+  + saveInstallation(InstallationDto): InstallationDto
+  + getInstallationById(Long): InstallationDto
+}
+class InstallationServiceImpl {
+  + InstallationServiceImpl(InstallationRepository, ProjectRepository, IMapClassWithDto): 
+  + saveInstallation(InstallationDto): InstallationDto
+  + getPagedListInstallationDTO(Integer, Integer): Page<InstallationDto>
+  + deleteInstallation(Long): void
+  + getInstallationById(Long): InstallationDto
+  + updateInstallation(Long, InstallationDto): InstallationDto
+}
+class IssueLogController {
+  + IssueLogController(IssueLogService): 
+  + updateIssueLog(Long, IssueLogDto): ResponseEntity<ResponseBody<IssueLogDto>>
+  + getIssueLogById(Long): ResponseEntity<ResponseBody<IssueLogDto>>
+  + createIssueLog(IssueLogDto): ResponseEntity<ResponseBody<IssueLogDto>>
+  + getPagedListIssueLog(Integer, Integer): ResponseEntity<ResponseBody<Page<IssueLogDto>>>
+  + deleteIssueLog(Long): ResponseEntity<ResponseBody<IssueLogDto>>
+}
+class IssueLogDto {
+  + IssueLogDto(LocalDate, Boolean, String, Status, Long, String): 
+  + IssueLogDto(): 
+  - dateDetection: LocalDate
+  - status: Status
+  - anomaly: Boolean
+  - project_id: Long
+  - projectName: String
+  - description: String
+  + builder(): IssueLogDtoBuilder
+   description: String
+   dateDetection: LocalDate
+   anomaly: Boolean
+   status: Status
+   project_id: Long
+   projectName: String
+}
+class IssueLogEntity {
+  + IssueLogEntity(Long, LocalDate, Boolean, String, Status, ProjectEntity): 
+  + IssueLogEntity(): 
+  - status: Status
+  - project: ProjectEntity
+  - id: Long
+  - description: String
+  - anomaly: Boolean
+  - dateDetection: LocalDate
+  + builder(): IssueLogEntityBuilder
+   description: String
+   project: ProjectEntity
+   dateDetection: LocalDate
+   id: Long?
+   anomaly: Boolean
+   status: Status
+}
+interface IssueLogRepository << interface >>
+interface IssueLogService << interface >> {
+  + getIssueLogById(Long): IssueLogDto
+  + getPagedListIssueLogDto(Integer, Integer): Page<IssueLogDto>
+  + deleteIssueLog(Long): void
+  + saveIssueLog(IssueLogDto): IssueLogDto
+  + updateIssueLog(Long, IssueLogDto): IssueLogDto
+}
+class IssueLogServiceImpl {
+  + IssueLogServiceImpl(IssueLogRepository, IMapClassWithDto, ProjectRepository): 
+  + getPagedListIssueLogDto(Integer, Integer): Page<IssueLogDto>
+  + updateIssueLog(Long, IssueLogDto): IssueLogDto
+  + deleteIssueLog(Long): void
+  + saveIssueLog(IssueLogDto): IssueLogDto
+  + getIssueLogById(Long): IssueLogDto
+}
+class JwtResponse {
+  + JwtResponse(): 
+  + JwtResponse(String, String, Long, UserDto, List<String>): 
+  - user: UserDto
+  - token: String
+  - roles: List<String>
+  - type: String
+  - expiresIn: Long
+  + builder(): JwtResponseBuilder
+  + toString(): String
+  + hashCode(): int
+  + equals(Object): boolean
+  # canEqual(Object): boolean
+   user: UserDto
+   roles: List<String>
+   type: String
+   token: String
+   expiresIn: Long
+}
+class JwtUtils {
+  + JwtUtils(): 
+  + generateToken(Authentication): String
+  - generateExpirationDate(): Date
+  ~ getUserNameFromJwtToken(String): String
+  - generateToken(Map<String, Object>): String
+  - getClaimsFromToken(String): Claims
+  - key(): Key
+  ~ validateJwtToken(String): boolean
+}
+interface ListConverter<ENTITY, DTO> << interface >> {
+  + convertFrom(Collection<DTO>): List<ENTITY>
+}
+class LoginRequest {
+  ~ LoginRequest(String, String): 
+  - password: String
+  - username: String
+  + builder(): LoginRequestBuilder
+   password: String
+   username: String
+}
+class MapClassWithDto {
+  + MapClassWithDto(ModelMapper): 
+  + convert(I, Class<O>): O
+}
+class MatSpringApplication {
+  + MatSpringApplication(): 
+  + main(String[]): void
+}
+class OneWayAbstractListConverter<ENTITY, DTO> {
+  + OneWayAbstractListConverter(): 
+  + convertTo(Collection<ENTITY>): List<DTO>
+  + subEntityTo(Collection<ENTITY>): List<DTO>
+  + convertToIds(Collection<ENTITY>): List<Long>
+}
+interface OneWayConverter<ENTITY, DTO> << interface >> {
+  + convertTo(ENTITY): DTO
+}
+interface OneWayListConverter<ENTITY, DTO> << interface >> {
+  + convertToIds(Collection<ENTITY>): List<Long>
+  + convertTo(Collection<ENTITY>): List<DTO>
+}
+class ProjectController {
+  + ProjectController(ProjectService): 
+  + createProject(ProjectDto): ResponseEntity<ResponseBody<ProjectDto>>
+  + updateProject(Long, ProjectDto): ResponseEntity<ResponseBody<ProjectDto>>
+  + getProjectById(Long): ResponseEntity<ResponseBody<ProjectDto>>
+  + deleteProject(Long): ResponseEntity<ResponseBody<ProjectDto>>
+  + getPagedListProject(Integer, Integer): ResponseEntity<ResponseBody<Page<ProjectDto>>>
+}
+class ProjectDto {
+  + ProjectDto(): 
+  + ProjectDto(String, String, String, LocalDate, LocalDate, int, List<Long>, List<UserDto>): 
+  - description: String
+  - name: String
+  - endDate: LocalDate
+  - status: String
+  - userIds: List<Long>
+  - startDate: LocalDate
+  - teams: List<UserDto>
+  - deadlines: int
+  + builder(): ProjectDtoBuilder
+   name: String
+   description: String
+   deadlines: int
+   startDate: LocalDate
+   endDate: LocalDate
+   status: String
+   teams: List<UserDto>
+   userIds: List<Long>
+}
+class ProjectEntity {
+  + ProjectEntity(): 
+  + ProjectEntity(Long, String, String, String, LocalDate, LocalDate, int, List<UserEntity>): 
+  - endDate: LocalDate
+  - id: Long
+  - description: String
+  - startDate: LocalDate
+  - teams: List<UserEntity>
+  - status: String
+  - name: String
+  - deadlines: int
+  + builder(): ProjectEntityBuilder
+   name: String
+   description: String
+   deadlines: int
+   startDate: LocalDate
+   id: Long?
+   endDate: LocalDate
+   status: String
+   teams: List<UserEntity>
+}
+interface ProjectRepository << interface >>
+interface ProjectService << interface >> {
+  + getProjectById(Long): ProjectDto
+  + getPagedListProject(Integer, Integer): Page<ProjectDto>
+  + deleteProject(Long): void
+  + updateProject(Long, ProjectDto): ProjectDto
+  + saveProject(ProjectDto): ProjectDto
+}
+class ProjectServiceImpl {
+  + ProjectServiceImpl(ProjectRepository, UserRepository, IMapClassWithDto): 
+  + saveProject(ProjectDto): ProjectDto
+  + getProjectById(Long): ProjectDto
+  + deleteProject(Long): void
+  + updateProject(Long, ProjectDto): ProjectDto
+  + getPagedListProject(Integer, Integer): Page<ProjectDto>
+}
+class RegisterRequest {
+  ~ RegisterRequest(String, String, String, String, boolean, String, Role): 
+  - username: String
+  - lastName: String
+  - password: String
+  - role: Role
+  - email: String
+  - enable: boolean
+  - firstName: String
+  + builder(): RegisterRequestBuilder
+   password: String
+   role: Role
+   lastName: String
+   enable: boolean
+   email: String
+   firstName: String
+   username: String
+}
+class ResponseBody<T> {
+  + ResponseBody(BusinessErrorCode, String): 
+  + ResponseBody(BusinessErrorCode, T): 
+  + ResponseBody(): 
+  + ResponseBody(String, T): 
+  - message: String
+  - data: T
+  + builder(): ResponseBodyBuilder<T>
+   data: T
+   message: String
+}
+enum Role << enumeration >> {
+  - Role(): 
+  + values(): Role[]
+  + valueOf(String): Role
+}
+enum Status << enumeration >> {
+  - Status(): 
+  + values(): Status[]
+  + valueOf(String): Status
+}
+enum StatusInstallation << enumeration >> {
+  - StatusInstallation(): 
+  + values(): StatusInstallation[]
+  + valueOf(String): StatusInstallation
+}
+class UserController {
+  + UserController(UserService): 
+  + getUserById(Long): ResponseEntity<ResponseBody<UserDto>>
+  + createUser(RegisterRequest): ResponseEntity<ResponseBody<UserDto>>
+  + getPagedListUser(Integer, Integer): ResponseEntity<ResponseBody<Page<UserDto>>>
+  + updateUser(Long, boolean, RegisterRequest): ResponseEntity<ResponseBody<UserDto>>
+  + deleteUser(Long): ResponseEntity<ResponseBody<UserDto>>
+   currentUser: ResponseEntity<ResponseBody<UserDto>>
+}
+class UserDetailsImpl {
+  + UserDetailsImpl(Long, String, boolean, String, String, String, Collection<GrantedAuthority>): 
+  + UserDetailsImpl(): 
+  - lastName: String
+  - password: String
+  - id: Long
+  - username: String
+  - firstName: String
+  - authorities: Collection<GrantedAuthority>
+  - enabled: boolean
+  + builder(): UserDetailsImplBuilder
+  + toString(): String
+  + hashCode(): int
+  + equals(Object): boolean
+   credentialsNonExpired: boolean
+   password: String
+   lastName: String
+   accountNonExpired: boolean
+   id: Long
+   authorities: Collection<GrantedAuthority>
+   firstName: String
+   username: String
+   enabled: boolean
+   accountNonLocked: boolean
+}
+class UserDetailsServiceImpl {
+  + UserDetailsServiceImpl(UserRepository): 
+  + loadUserByUsername(String): UserDetails
+}
+class UserDto {
+  + UserDto(): 
+  + UserDto(String, boolean, String, String, String, Role): 
+  - username: String
+  - email: String
+  - role: Role
+  - firstName: String
+  - enabled: boolean
+  - lastName: String
+  + builder(): UserDtoBuilder
+   role: Role
+   firstName: String
+   lastName: String
+   username: String
+   enabled: boolean
+   email: String
+}
+class UserEntity {
+  + UserEntity(): 
+  - role: Role
+  - email: String
+  - password: String
+  - enabled: boolean
+  - firstName: String
+  - id: Long
+  - lastName: String
+  - username: String
+   password: String
+   role: Role
+   grantedAuthoritiesList: List<SimpleGrantedAuthority>
+   lastName: String
+   id: Long?
+   email: String
+   firstName: String
+   username: String
+   enabled: boolean
+}
+interface UserRepository << interface >> {
+  + existsByUsername(String): Boolean
+  + findByUsername(String): Optional<UserEntity>
+}
+interface UserService << interface >> {
+  + addUser(RegisterRequest): UserDto
+  + getUserByUserName(String): UserEntity
+  + getUserById(Long): UserDto
+  + deleteUser(Long): void
+  + existsByUsername(String): Boolean
+  + getPagedListUser(Integer, Integer): Page<UserDto>
+  + updateUser(Long, RegisterRequest, boolean): UserDto
+   currentUser: UserDto
+}
+class UserServiceImpl {
+  + UserServiceImpl(UserRepository, IMapClassWithDto, PasswordEncoder): 
+  + getPagedListUser(Integer, Integer): Page<UserDto>
+  + existsByUsername(String): Boolean
+  + getUserById(Long): UserDto
+  + addUser(RegisterRequest): UserDto
+  + updateUser(Long, RegisterRequest, boolean): UserDto
+  + getUserByUserName(String): UserEntity
+  + deleteUser(Long): void
+   currentUser: UserDto
+}
+class WebSecurityConfig {
+  + WebSecurityConfig(UserDetailsServiceImpl, AuthEntryPointJwt): 
+  + authenticationManager(AuthenticationConfiguration): AuthenticationManager
+  + passwordEncoder(): PasswordEncoder
+  + authenticationProvider(): DaoAuthenticationProvider
+  + filterChain(HttpSecurity): SecurityFilterChain
+  + authenticationJwtTokenFilter(): AuthTokenFilter
+}
+
+AuthServiceImpl                    -[#008200,dashed]-^  AuthService                       
+BasicConverter                     -[#595959,dashed]->  CustomAuditEntity                 
+BasicConverter                     -[#008200,dashed]-^  ListConverter                     
+BasicConverter                     -[#000082,plain]-^  OneWayAbstractListConverter       
+CahierTestDto                      -[#000082,plain]-^  CustomDtoWithID                   
+CahierTestServiceImpl              -[#008200,dashed]-^  CahierTestService                 
+CommonStatusCode                   -[#008200,dashed]-^  BusinessErrorCode                 
+ConfigurationDto                   -[#000082,plain]-^  CustomDtoWithID                   
+ConfigurationEntity                -[#000082,plain]-^  CustomAuditEntity                 
+ConfigurationReferenceDTO          -[#000082,plain]-^  CustomDtoWithID                   
+ConfigurationReferenceEntity       -[#000082,plain]-^  CustomAuditEntity                 
+ConfigurationReferenceServiceImpl  -[#008200,dashed]-^  ConfigurationReferenceService     
+ConfigurationServiceImpl           -[#008200,dashed]-^  ConfigurationService              
+Converter                          -[#595959,dashed]->  CustomAuditEntity                 
+Converter                          -[#008200,plain]-^  OneWayConverter                   
+ErrorCode                          -[#008200,dashed]-^  BusinessErrorCode                 
+InstallationDto                    -[#000082,plain]-^  CustomDtoWithID                   
+InstallationEntity                 -[#000082,plain]-^  CustomAuditEntity                 
+InstallationServiceImpl            -[#008200,dashed]-^  InstallationService               
+IssueLogDto                        -[#000082,plain]-^  CustomDtoWithID                   
+IssueLogEntity                     -[#000082,plain]-^  CustomAuditEntity                 
+IssueLogServiceImpl                -[#008200,dashed]-^  IssueLogService                   
+ListConverter                      -[#008200,plain]-^  Converter                         
+ListConverter                      -[#595959,dashed]->  CustomAuditEntity                 
+ListConverter                      -[#008200,plain]-^  OneWayListConverter               
+MapClassWithDto                    -[#008200,dashed]-^  IMapClassWithDto                  
+OneWayAbstractListConverter        -[#595959,dashed]->  CustomAuditEntity                 
+OneWayAbstractListConverter        -[#008200,dashed]-^  OneWayListConverter               
+OneWayConverter                    -[#595959,dashed]->  CustomAuditEntity                 
+OneWayListConverter                -[#595959,dashed]->  CustomAuditEntity                 
+OneWayListConverter                -[#008200,plain]-^  OneWayConverter                   
+ProjectDto                         -[#000082,plain]-^  CustomDtoWithID                   
+ProjectEntity                      -[#000082,plain]-^  CustomAuditEntity                 
+ProjectServiceImpl                 -[#008200,dashed]-^  ProjectService                    
+UserDto                            -[#000082,plain]-^  CustomDtoWithID                   
+UserEntity                         -[#000082,plain]-^  CustomAuditEntity                 
+UserServiceImpl                    -[#008200,dashed]-^  UserService                       
+@enduml
